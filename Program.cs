@@ -23,7 +23,7 @@ namespace RPS_CSharp
                 int opponentPlays = random.Next(1, 3);
                 string[] choices = { "rock", "paper", "scissors" };
                 string opponentChoice = choices[opponentPlays];
-                string results;
+                var results = "";
                 if (playsRock && opponentChoice == "rock")
                 {
                     playerDraws++;
@@ -75,10 +75,9 @@ namespace RPS_CSharp
                     playerDraws++;
                     results = "Tie";
                 }
-
                 Console.WriteLine($"Opponent plays {opponentChoice}! {results}! W-{playerWins} L-{playerLosses} D-{playerDraws} Play again?");
                 string playAgain = Console.ReadLine();
-                if (playAgain.ToLower() = "y" || playAgain.ToLower() = "yes")
+                if (playAgain.ToLower() == "y" || playAgain.ToLower() == "yes")
                 {
                     continue;
                 }
